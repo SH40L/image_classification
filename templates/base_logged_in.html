@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Image Classification{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/logged_in_styles.css') }}">
+    <link rel="icon" href="../static/instance/images/favicon.png" type="image/png">
+
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="{{ url_for('main') }}" class="logo">
+                <img src="{{ url_for('static', filename='instance/images/logo.png') }}" alt="Logo">
+            </a>
+            <div class="nav-links">
+                <a href="{{ url_for('image_classification') }}" class="home">Classify</a>
+                <a href="{{ url_for('about_project') }}">About Project</a>
+                <a href="{{ url_for('group_members') }}">Group Members</a>
+                <a href="{{ url_for('dashboard') }}">Dashboard</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </div>
+    </nav>
+    <div class="content container">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        <hr>
+        <p>SHAOL TECH | Kazi Nur Ali</p>
+    </footer>
+</body>
+</html>

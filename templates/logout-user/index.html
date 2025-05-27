@@ -1,0 +1,13 @@
+{% extends "logout-user/base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="center-content">
+    <h1 class="welcome">Welcome</h1>
+    <p class="subtext">to Image Classification</p>
+    <p class="description">This is the homepage. Please login or register to use the image classification tool.</p>
+    <div class="buttons">
+        <a href="{{ url_for('register') }}" class="register-button">New Here? Join Us Now</a>
+        <a href="{{ url_for('login') }}" class="login-button">Already Joined! LogIn</a>
+    </div>
+</div>
+{% endblock %}

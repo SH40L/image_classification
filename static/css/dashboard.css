@@ -1,0 +1,93 @@
+body {
+    background-color: #DBDBDB;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.welcome-message {
+    padding-top: 20px;   /* Add padding to the top */
+    color: #444444;      /* Text color */
+    font-weight: bold;   /* Bold text */
+    font-size: 1.5em;    /* Make the welcome message bigger */
+}
+
+.dashboard-container {
+    display: flex;
+    padding: 0;  /* Remove padding */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);  /* Darker shadow */
+    border-radius: 10px;  /* Maintain border-radius */
+    background-color: #ECECEC;
+}
+
+.sidebar {
+    width: 250px;  /* Adjust width to cover full height */
+    background-color: #DBDBDB;  /* Sidebar background color covering full height */
+    padding: 0;  /* Remove padding to cover full height */
+    border-top-left-radius: 10px;  /* Add border radius to top-left */
+    border-bottom-left-radius: 10px;  /* Add border radius to bottom-left */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;  /* Remove margin from ul */
+}
+
+.sidebar li {
+    margin: 0;  /* Remove margin to cover full width */
+    border-bottom: 1px solid #ddd;  /* Add bottom border */
+}
+
+.sidebar li:first-child a {
+    border-top-left-radius: 10px;  /* Add radius to first item */
+}
+
+.sidebar li:last-child a {
+    border-bottom-left-radius: 10px;  /* Add radius to last item */
+}
+
+.sidebar li hr {
+    margin: 0;  /* Remove margin from hr */
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+.sidebar li a {
+    text-decoration: none;
+    color: #444444;  /* Text color */
+    padding: 25px 20px 25px 30px;  /* Adjust padding for full height click area (top, right, bottom, left) */
+    display: block;
+    font-weight: bolder;  /* More bold text */
+    font-size: 1.1em;     /* Increase the menu text size */
+    transition: background-color 0.3s, background-image 0.3s;
+}
+
+.sidebar li a:hover {
+    background-image: linear-gradient(to bottom, #C2C2C2, #DBDBDB, #C2C2C2); /* Gradient background for active state */
+    color: #444444;
+}
+
+.sidebar li.active a {
+    position: relative;
+    color: #444444;
+    background-image: linear-gradient(to bottom, #ECECEC, #c7c6c6);  /* Gradient hover effect */
+}
+
+.sidebar li.active a::after {
+    content: "";
+    position: absolute;
+    right: 0px;  /* Adjusted to appear on the right side */
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg); /* Arrow pointing left */
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent #ECECEC transparent transparent;  /* Arrow head color */
+}
+
+.dashboard-content {
+    flex: 1;
+    padding: 20px;  /* Add padding on all sides */
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Project</title>
+    <link rel="stylesheet" href="../static/css/about_project_styles.css">
+    <link rel="icon" href="../static/instance/images/favicon.png" type="image/png">
+</head>
+<body>
+    <div class="banner">
+        <nav class="navbar">
+            <div class="container">
+                <a href="{{ url_for('main') }}" class="logo">
+                    <img src="../static/instance/images/logo.png" alt="Logo">
+                </a>
+                <div class="nav-links">
+                    <a href="{{ url_for('image_classification') }}" class="home">Classify</a>
+                    <a href="{{ url_for('about_project') }}">About Project</a>
+                    <a href="{{ url_for('group_members') }}">Group Members</a>
+                    <a href="{{ url_for('dashboard') }}">Dashboard</a>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </div>
+            </div>
+        </nav>
+        <div class="content-container">
+            <div class="left-content">
+                <h1 class="title">About This <span class="highlight">Image</span><br><span class="highlight">Classification</span> Project</h1>
+                <p class="description">Discover the features, technologies, and workings behind our advanced image classification project.</p>
+                <div class="button-container">
+                    <a href="{{ url_for('image_classification') }}" class="classify-button">Classify Image ➔</a>
+                </div>
+            </div>
+            <div class="right-content">
+                <img src="../static/instance/images/banner-image.png" alt="Banner Image">
+            </div>
+        </div>
+    </div>
+
+    <div class="options-container">
+        <div class="option" data-target="overview">Project Overview</div>
+        <div class="option" data-target="features">Features</div>
+        <div class="option" data-target="technologies">Technologies Used</div>
+        <div class="option" data-target="how-it-works">How It Works</div>
+    </div>
+
+    <div class="content-section" id="overview">
+        <div class="left-image">
+            <img src="../static/instance/images/overview-image.png" alt="Overview Image">
+        </div>
+        <div class="right-details">
+            <h2>Project Overview</h2>
+            <p>
+                This project aims to provide a web-based image classification tool leveraging deep learning. Users can
+                upload images or provide URLs, and our model will classify the images into categories such as 'angry',
+                'crying', 'fighting_dog', 'happy', 'male', 'female', 'running_dog', and 'sitting_dog'.
+            </p>
+        </div>
+    </div>
+
+    <div class="content-section" id="features">
+        <div class="left-image">
+            <img src="../static/instance/images/features-image.png" alt="Features Image">
+        </div>
+        <div class="right-details">
+            <h2>Features</h2>
+            <ul>
+                <li>User registration and email verification</li>
+                <li>Password reset functionality</li>
+                <li>Image classification with top-3 predictions</li>
+                <li>User profile management</li>
+                <li>Search history with filters and pagination</li>
+                <li>Secure authentication and session management</li>
+                <li>Responsive and user-friendly interface</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-section" id="technologies">
+        <div class="left-image">
+            <img src="../static/instance/images/technologies-image.png" alt="Technologies Image">
+        </div>
+        <div class="right-details">
+            <h2>Technologies Used</h2>
+            <ul>
+                <li><strong>Flask:</strong> Web framework for Python</li>
+                <li><strong>MySQL:</strong> Database management system</li>
+                <li><strong>TensorFlow:</strong> Machine learning framework for image classification</li>
+                <li><strong>Flask-Mail:</strong> Library for sending emails</li>
+                <li><strong>Flask-Login:</strong> User session management</li>
+                <li><strong>Bootstrap:</strong> Front-end component library for responsive design</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-section" id="how-it-works">
+        <div class="left-image">
+            <img src="../static/instance/images/how-it-works-image.png" alt="How It Works Image">
+        </div>
+        <div class="right-details">
+            <h2>How It Works</h2>
+            <ol>
+                <li>Users upload an image or provide an image URL.</li>
+                <li>The image is preprocessed to match the input format required by the CNN model.</li>
+                <li>The preprocessed image is fed into the model, which predicts the class probabilities.</li>
+                <li>The top three predictions are displayed to the user along with their probabilities.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="project-materials">
+        <h2>Project Materials</h2>
+        <div class="material-grid">
+            <a href="{{ url_for('codes') }}" class="material">
+                <img src="../static/instance/images/codes.png" alt="Material 1">
+                <div class="overlay">
+                    <div class="initial-text">Source Code</div>
+                    <div class="hover-text">View All Codes</div>
+                </div>
+            </a>
+            <a href="{{ url_for('presentation') }}" class="material">
+                <img src="../static/instance/images/presentation.png" alt="Material 2">
+                <div class="overlay">
+                    <div class="initial-text">Presentation</div>
+                    <div class="hover-text">View Slide</div>
+                </div>
+            </a>
+            <a href="{{ url_for('report') }}" class="material">
+                <img src="../static/instance/images/report.png" alt="Material 3">
+                <div class="overlay">
+                    <div class="initial-text">Project Report</div>
+                    <div class="hover-text">View Project Report</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <hr>
+        <p>SHAOL TECH | Kazi Nur Ali</p>
+    </footer>
+    <script src="../static/js/about_project_scripts.js"></script>
+</body>
+</html>

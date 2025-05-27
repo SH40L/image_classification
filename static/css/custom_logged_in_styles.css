@@ -1,0 +1,93 @@
+body {
+    background: url('../instance/images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+nav .logo img {
+    content: url('../instance/images/logo-01.png'); /* Override logo image */
+    height: 80px;
+}
+
+nav .nav-links a {
+    color: #fff; /* Menus color white */
+    text-decoration: none;
+    font-weight: 600; /* Semi-bold */
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a.home {
+    color: #fff; /* Default color white */
+    font-weight: bold; /* Bold */
+}
+
+nav .nav-links a:hover {
+    color: #1DBF75; /* Hover color */
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff; /* White color for footer text */
+    font-weight: 300; /* Thin font weight */
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+hr {
+    display: none; /* Remove the <hr> from footer */
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: calc(100% - 100px);
+    text-align: left;
+    padding-left: 10%;
+}
+
+.center-content {
+    width: 50%;
+}
+
+.center-content .welcome {
+    font-size: 64px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.center-content .subtext {
+    font-size: 48px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.center-content .description {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.center-content .classify-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #1DBF75;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.center-content .classify-button:hover {
+    background-color: #1f915e;
+}

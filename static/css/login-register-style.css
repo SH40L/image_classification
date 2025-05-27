@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the start */
+    min-height: 100vh;
+    margin: 0;
+}
+
+.divfimg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px; /* Add padding to ensure content is not cut off at the top */
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 20px; /* Add margin-top to space it from the logo */
+}
+
+.fimg img {
+    width: 350px;
+}
+
+.star{
+    color: red;
+    
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333333;
+    text-align: left;
+    width: 100%;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555555;
+    text-align: left;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6c63ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #5a54e5;
+}
+
+p {
+    margin-top: 20px;
+    color: #777777;
+    text-align: left;
+    width: 100%;
+}
+
+a {
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    background-color: #ffdddd;
+    color: #ff0000;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ff0000;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.flash-message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    text-align: center;
+    width: 100%;
+}
+
+.flash-message.danger {
+    background-color: #ffdddd;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.flash-message.success {
+    background-color: #ddffdd;
+    color: #008000;
+    border: 1px solid #008000;
+}
+
+.logreg-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logreg {
+    background-color: #119f16;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.logreg a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    line-height: 50px; /* Center text vertically */
+}
+
+.logreg:hover {
+    background-color: #0c9111;
+}

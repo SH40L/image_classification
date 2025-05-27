@@ -1,0 +1,29 @@
+{% extends "base_logged_in.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+<div class="main-container">
+    <div class="welcome-message">
+        <h3>Welcome to your dashboard, {{ current_user.username }}</h3>
+    </div>
+
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <ul>
+                <li class="{% if request.endpoint == 'profile' %}active{% endif %}">
+                    <a href="{{ url_for('profile') }}">Profile</a>
+                    <hr>
+                </li>
+                <li class="{% if request.endpoint == 'history' %}active{% endif %}">
+                    <a href="{{ url_for('history') }}">Search History</a>
+                    <hr>
+                </li>
+            </ul>
+        </div>
+        <div class="dashboard-content">
+            {% block dashboard_content %}{% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login-register-style.css') }}">
+    <link rel="icon" href="../../static/instance/images/favicon.png" type="image/png">
+
+</head>
+<body>
+    <div class="divfimg">
+        <a href="{{ url_for('main') }}" class="fimg"><img src="{{ url_for('static', filename='instance/images/logo.png') }}" alt="Logo"></a>
+        <div class="form-container">
+            <h2>Login</h2>
+            <hr>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <form method="POST" action="{{ url_for('login') }}">
+                <label for="username">Username<span class="star">*</span></label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password<span class="star">*</span></label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Forgot your password? <a href="{{ url_for('reset_password') }}">Reset Password</a></p>
+            <hr>
+            <div class="logreg-container">
+                <button class="logreg"><a href="{{ url_for('register') }}">Join Us Now</a></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

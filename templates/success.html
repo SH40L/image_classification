@@ -1,0 +1,115 @@
+{% extends "base_logged_in.html" %}
+{% block title %}Success{% endblock %}
+{% block content %}
+<h2 class="title">Classification Results</h2>
+<div class="result-container">
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='images/' ~ img) }}" class="uploaded-image">
+    </div>
+    <div class="table-container">
+        <table class="result-table">
+            <tr>
+                <th>Class</th>
+                <th>Probability</th>
+            </tr>
+            <tr>
+                <td>{{ predictions.class1 | replace("_", " ") | title }}</td>
+                <td>{{ predictions.prob1 }}%</td>
+            </tr>
+            <tr>
+                <td>{{ predictions.class2 | replace("_", " ") | title }}</td>
+                <td>{{ predictions.prob2 }}%</td>
+            </tr>
+            <tr>
+                <td>{{ predictions.class3 | replace("_", " ") | title }}</td>
+                <td>{{ predictions.prob3 }}%</td>
+            </tr>
+        </table>
+        <div class="action-buttons">
+            <button onclick="redirectToImageClassification()">Try With Another Image</button>
+        </div>
+    </div>
+</div>
+<script>
+    function redirectToImageClassification() {
+        window.location.href = "{{ url_for('image_classification') }}";
+    }
+</script>
+<style>
+    .title {
+        text-align: center;
+        font-size: 36px;
+        margin: 50px 0; /* Increased margin for more space */
+    }
+
+    .result-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 100px;
+        justify-content: center;
+        align-items: start;
+        margin-top: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .uploaded-image {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .table-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the table and button */
+    }
+
+    .result-table {
+        width: 700px; /* Set a fixed width for the table */
+        border-collapse: collapse;
+        background-color: white;
+        margin-bottom: 20px;
+    }
+
+    .result-table th,
+    .result-table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+        color: black;
+        width: 50%; /* Make both columns take up 50% of the table width */
+    }
+
+    .result-table th {
+        background-color: #f2f2f2;
+    }
+
+    .action-buttons {
+        text-align: center;
+        width: 100%; /* Make the button container take the full width */
+    }
+
+    .action-buttons button {
+        padding: 10px 20px;
+        background-color: #3f9441;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    .action-buttons button:hover {
+        background-color: #45a049;
+    }
+</style>
+{% endblock %}

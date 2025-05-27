@@ -1,0 +1,122 @@
+{% extends "dashboard.html" %}
+{% block title %}Profile{% endblock %}
+{% block dashboard_content %}
+<style>
+    .profile-container {
+        padding: 0 50px 50px 50px;
+    }
+
+    .profile-container h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .profile-container hr {
+        margin: 20px 0;
+    }
+
+    .profile-container .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px; /* Reduced margin-bottom for less gap */
+    }
+
+    .profile-container label {
+        flex: 1;
+        color: gray;
+        font-weight: bold;
+        margin-right: 5px; /* Reduced margin-right for less gap */
+    }
+
+    .profile-container input[type="text"],
+    .profile-container input[type="email"],
+    .profile-container input[type="password"] {
+        flex: 2;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #f7f7f7;
+        box-sizing: border-box;
+        width: 60%; /* Reduced width */
+    }
+
+    .profile-container input[readonly] {
+        background-color: #dcdcdc;
+        color: #888;
+    }
+
+    .profile-container .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .profile-container .btn:hover {
+        background-color: #0056b3;
+    }
+
+    .flash-messages {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .flash-success {
+        color: green;
+    }
+
+    .flash-danger {
+        color: red;
+    }
+
+    .password-change {
+        margin-top: 20px;
+    }
+
+    .password-change label {
+        margin-left: 5px;
+    }
+
+    #change-password-form.hidden {
+        display: none;
+    }
+</style>
+
+<div class="profile-container">
+    <h2>Profile</h2>
+    <hr>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    <form method="post" action="{{ url_for('profile') }}">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" name="username" value="{{ user.username }}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" value="{{ user.first_name }}" required>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" value="{{ user.last_name }}" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="{{ user.email }}" required>
+        </div>
+        <button type="submit" class="btn">Update Profile</button>
+    </form>
+</div>
+{% endblock %}

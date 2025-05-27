@@ -1,0 +1,166 @@
+/* Project Materials Section */
+.project-materials {
+    padding: 50px 5%;
+    background: #f8f9fa;
+}
+
+.project-materials h2 {
+    font-size: 36px;
+    color: #343a40;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section h3 {
+    font-size: 30px;
+    color: #343a40;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.code-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.code-box {
+    position: relative;
+    width: 15%;
+    text-decoration: none;
+}
+
+.code-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.code-box .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: background 0.3s ease;
+}
+
+.code-box .initial-text {
+    color: white;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: bold;
+}
+
+.code-box .hover-text {
+    color: white;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.code-box:hover .overlay {
+    background: linear-gradient(135deg, rgba(0, 0, 255, 0.7), rgba(255, 0, 0, 0.7));
+}
+
+.code-box:hover .initial-text {
+    transform: translate(-50%, -200%);
+}
+
+.code-box:hover .hover-text {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* Popup Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.copy-btn:hover {
+    background-color: #0056b3;
+}
+
+.copy-btn.copied {
+    background-color: #28a745;
+}
+
+#codeDisplay {
+    white-space: pre-wrap;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 16px;
+}

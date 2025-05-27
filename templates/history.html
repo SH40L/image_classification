@@ -1,0 +1,150 @@
+{% extends "dashboard.html" %}
+{% block title %}History{% endblock %}
+{% block dashboard_content %}
+<style>
+    .history-container {
+        padding: 0 50px 50px 50px;
+    }
+
+    .history-container h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .history-container hr {
+        margin: 20px 0;
+    }
+
+    .sort-options {
+        float: right;
+        margin-bottom: 20px;
+    }
+
+    .sort-options select {
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    .history-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .history-table, .history-table th, .history-table td {
+        border: 1px solid black;
+    }
+    .history-table th, .history-table td {
+        padding: 10px;
+        text-align: center;
+    }
+    .history-table th {
+        text-align: center;
+    }
+    .history-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    .history-table tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+    .history-table td img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .history-table .date-time {
+        text-align: center;
+        line-height: 2; /* Adjusts the line height for spacing */
+    }
+    .history-table .date-time .date,
+    .history-table .date-time .time {
+        display: block;
+    }
+    .history-table .results {
+        text-align: left;
+        padding-left: 50px;
+        line-height: 2; /* Adjusts the line height for spacing */
+    }
+    .pagination {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .pagination a {
+        margin: 0 5px;
+        padding: 5px 10px;
+        text-decoration: none;
+        border: 1px solid #000;
+        color: #000;
+    }
+    .pagination a.active {
+        background-color: #000;
+        color: #fff;
+    }
+    .pagination a.disabled {
+        pointer-events: none;
+        color: #ccc;
+        border-color: #ccc;
+    }
+</style>
+
+<div class="history-container">
+    <h2>Search History</h2>
+    <hr>
+    <div class="sort-options">
+        <form method="get" action="{{ url_for('history') }}">
+            <label for="class">Sort by Class:</label>
+            <select name="class" id="class" onchange="this.form.submit()">
+                <option value="">Select Class</option>
+                {% for class_name in class_options %}
+                    <option value="{{ class_name }}" {% if class_name == selected_class %}selected{% endif %}>
+                        {{ class_name.replace('_', ' ').title() }}
+                    </option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+    <table class="history-table">
+        <tr>
+            <th style="width: 150px;">Image</th>
+            <th>Result</th>
+            <th style="width: 150px;">Date and Time</th>
+        </tr>
+        {% for entry in history %}
+        <tr>
+            <td><img src="{{ url_for('static', filename='images/' ~ entry[0]) }}" alt="History Image"></td>
+            <td class="results">
+                {% set results = entry[1] %}
+                {% for i in range(1, 4) %}
+                    {{ results['class' + i|string] | replace('_', ' ') | title }}: {{ results['prob' + i|string] }}%
+                    {% if not loop.last %}<br>{% endif %}
+                {% endfor %}
+            </td>
+            <td class="date-time">
+                <span class="date">{{ entry[2].strftime('%B %d, %Y') }}</span>
+                <span class="time">{{ entry[2].strftime('%I:%M %p') }}</span>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="pagination">
+        <a href="{{ url_for('history', page=1, class=selected_class) }}" class="{{ 'disabled' if current_page == 1 else '' }}">First</a>
+        <a href="{{ url_for('history', page=current_page - 1, class=selected_class) }}" class="{{ 'disabled' if current_page == 1 else '' }}">«</a>
+
+        {% if pagination_range.start > 1 %}
+            <span>...</span>
+        {% endif %}
+        
+        {% for page_num in pagination_range %}
+            <a href="{{ url_for('history', page=page_num, class=selected_class) }}" class="{% if page_num == current_page %}active{% endif %}">{{ page_num }}</a>
+        {% endfor %}
+        
+        {% if pagination_range.stop - 1 < total_pages %}
+            <span>...</span>
+        {% endif %}
+        
+        <a href="{{ url_for('history', page=current_page + 1, class=selected_class) }}" class="{{ 'disabled' if current_page == total_pages else '' }}">»</a>
+        <a href="{{ url_for('history', page=total_pages, class=selected_class) }}" class="{{ 'disabled' if current_page == total_pages else '' }}">Last</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.card-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-content .name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    margin: 5px 0;
+}
+
+.card-content hr {
+    margin: 10px 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center align for default card */
+    gap: 30px;
+}
+
+.social-icons a {
+    color: #000;
+    text-decoration: none;
+    font-size: 24px; /* Increased icon size */
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+.card-hover-content {
+    display: flex;
+    flex-direction: row; /* Keep content side by side */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.card-hover-content img {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; /* Adjust border radius for the left side */
+    margin-right: 10px; /* Increase gap between image and content */
+}
+
+.hover-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 0; /* Align with image padding */
+    box-sizing: border-box;
+    overflow-y: hidden; /* Prevent scrolling on the container */
+    height: 100%;
+    width: calc(100% - 310px); /* Ensure content fits the remaining space, account for increased gap */
+}
+
+.hover-content .name, .hover-content .id, .hover-content .department, .hover-content .university {
+    margin: 5px 0; /* Reduce spacing between text elements */
+}
+
+.hover-content .description {
+    margin: 15px 0;
+    flex: 1; /* Take up remaining space to push the icons down */
+    overflow-y: auto; /* Allow vertical scrolling for the description */
+}
+
+.card:hover {
+    width: 850px;  /* Increased width for hover effect */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);  /* More shadow for cards */
+}
+
+.card:hover .card-hover-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+.card:hover .social-icons {
+    justify-content: flex-start; /* Align icons to the left on hover */
+    gap: 40px; /* Slightly increase gap between icons */
+    margin-top: 20px; /* Place social icons 20px below the hr */
+}
+
+.card-hover-content hr {
+    margin: 5px 0 0; /* Ensure hr margin stays as intended */
+}

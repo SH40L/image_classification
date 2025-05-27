@@ -1,0 +1,13 @@
+{% extends 'base_logged_in.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom_logged_in_styles.css') }}">
+
+<div class="center-content">
+    <h1 class="welcome">Welcome, {{ current_user.username }}</h1>
+    <p class="subtext">to Image Classification</p>
+    <p class="description">Explore the functionalities available for you.</p>
+    <a href="{{ url_for('image_classification') }}" class="classify-button">Classify Your Image</a>
+</div>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "base_logged_in.html" %}
+
+{% block title %}Meet our team{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/group_members.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="team-container">
+    <h1 class="title">Meet our team</h1>
+    <div class="card-container">
+        <!-- Member 1 -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='instance/images/1.jpg') }}" alt="Member 1">
+            <div class="card-content">
+                <h2 class="name">Kazi Nur Ali</h2>
+                <p class="id">ID: 213002130</p>
+                <p class="department">B.Sc in CSE</p>
+                <p class="university">Green University of Bangladesh</p>
+                <hr>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/kazikazol10" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://x.com/kazikazol10" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/kazikazol10/" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="card-hover-content">
+                <img src="{{ url_for('static', filename='instance/images/1.jpg') }}" alt="Member 1">
+                <div class="hover-content">
+                    <h2 class="name">Kazi Nur Ali</h2>
+                    <p class="id">ID: 213002130</p>
+                    <p class="department">B.Sc in CSE</p>
+                    <p class="university">Green University of Bangladesh</p>
+                    <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi cumque,
+                        sequi fugiat perspiciatis eius tempora error soluta magni quis. Omnis culpa obcaecati aspernatur
+                        id fuga aliquid adipisci nulla ex illo.</p>
+                    <hr>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/kazikazol10" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://x.com/kazikazol10" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/kazikazol10/" target="_blank"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Member 2 -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='instance/images/2.jpg') }}" alt="Member 2">
+            <div class="card-content">
+                <h2 class="name">Mehedi Hasan Lemon</h2>
+                <p class="id">213002107</p>
+                <p class="department">B.Sc in CSE</p>
+                <p class="university">Green University of Bangladesh</p>
+                <hr>
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="card-hover-content">
+                <img src="{{ url_for('static', filename='instance/images/2.jpg') }}" alt="Member 2">
+                <div class="hover-content">
+                    <h2 class="name">Mehedi Hasan Lemon</h2>
+                    <p class="id">213002107</p>
+                    <p class="department">B.Sc in CSE</p>
+                    <p class="university">Green University of Bangladesh</p>
+                    <p class="description">Lorem ipsum dolor, korem100 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sapiente accusantium iusto. Dignissimos perspiciatis laboriosam culpa tempora voluptate, blanditiis natus minima, in esse illo ullam dolorum excepturi non consequuntur architecto expedita omnis repellat vitae quasi ipsum ex aspernatur. Est labore sint placeat atque porro, laborum vitae modi? Maiores quod debitis aliquid optio veritatis deleniti sed, aspernatur autem molestiae minus ea error similique, omnis obcaecati placeat porro necessitatibus quam eaque dicta. Doloremque qui tenetur impedit ut amet optio aliquid? Minus a fugiat, veniam, animi nam tempore repellendus reprehenderit aliquid libero aperiam labore corporis neque! Totam aspernatur rem soluta, quibusdam impedit est.</p>
+                    <hr>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

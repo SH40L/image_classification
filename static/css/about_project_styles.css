@@ -1,0 +1,332 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* General styles */
+.banner {
+    position: relative;
+    min-height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: url('../instance/images/Banner-bg.png') no-repeat top right;
+    background-size: 60% 100%;
+}
+
+.navbar {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background: none;
+    z-index: 10;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar .logo img {
+    height: 80px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a.home {
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar .nav-links a:hover {
+    color: #1DBF75;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.left-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.left-content .title {
+    font-size: 48px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.left-content .highlight {
+    color: #FBB271;
+}
+
+.left-content .description {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #444444;
+}
+
+.classify-button {
+    display: inline-block;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    margin-top: 10px;
+}
+
+.classify-button:hover {
+    transform: translateX(20px);
+}
+
+.right-content {
+    width: 40%;
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-content img {
+    max-width: 400px;
+    height: auto;
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    gap: 40px;
+    background: #f8f9fa;
+}
+
+.option {
+    font-size: 20px;
+    font-weight: 600;
+    color: #5c5c5c;
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
+}
+
+.option::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 0;
+    background-color: #FBB271; /* Same color as the highlight */
+    transition: width 0.3s ease;
+}
+
+.option:hover::after {
+    width: 100%;
+}
+
+.option.active::after {
+    width: 100%;
+}
+
+.option.active {
+    color: #343a40;
+    font-weight: bold;
+}
+
+.content-section {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px 5%;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.content-section.active {
+    display: flex;
+}
+
+.left-image img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right-details {
+    width: 60%;
+    padding-left: 20px;
+}
+
+.right-details h2 {
+    font-size: 36px;
+    color: #343a40;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.right-details p, .right-details ul, .right-details ol {
+    font-size: 18px;
+    color: #444444;
+    line-height: 1.6;
+}
+
+.right-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.right-details ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    color: #6c757d;
+    font-weight: 300;
+}
+
+footer p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #afafaf;
+    margin: 30px 0;
+    width: 100%;
+}
+
+
+/* Transition effects */
+@keyframes slide-in-animation {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in {
+    animation: slide-in-animation 1s forwards;
+}
+
+
+
+/* Project Materials Section */
+.project-materials {
+    padding: 50px 5%;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.project-materials h2 {
+    font-size: 36px;
+    color: #343a40;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.material-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.material {
+    position: relative;
+    width: 30%;
+    text-decoration: none; /* Ensures link does not have an underline */
+}
+
+.material img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.material .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Initial overlay with low opacity */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: background 0.3s ease;
+}
+
+.material .initial-text {
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: bold;
+}
+
+.material .hover-text {
+    color: white;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.material:hover .overlay {
+    background: linear-gradient(135deg, rgba(0, 0, 255, 0.7), rgba(255, 0, 0, 0.7));
+}
+
+.material:hover .initial-text {
+    transform: translate(-50%, -200%); /* Move the title further up */
+}
+
+.material:hover .hover-text {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
