@@ -1,6 +1,0 @@
-Frontend: HTML5, CSS3, JavaScript, Jinja2 Templates
-Backend: Python 3.10, Flask
-Machine Learning: TensorFlow, Keras, Pillow (PIL)
-Database: MySQL (Local via XAMPP), Flask-MySQLdb
-Email Verification: SMTP via Flask-Mail
-Storage: Local File System (static/images folder)

@@ -5,6 +5,10 @@
     <h1>Classify Your Image</h1>
     <p>Identify objects in your image by using our Image Classifier.</p>
     <p>Vary the detection confidence and Shows best result with JPG, JPEG, PNG files and close-range images.</p>
+    <div class="supported-classes">
+        <strong>Supported Categories for Best Results:</strong><br>
+        Angry, Crying, Happy, Male, Female, Sitting Dog, Running Dog, Fighting Dog
+    </div>
     <div class="upload-container" id="upload-container">
         <img src="https://img.icons8.com/ios-glyphs/100/000000/camera.png" alt="Upload Icon">
         <p class="">Drop an image here<br><br>or<br><br>Click to browse</p>
@@ -61,6 +65,17 @@
     .upload-container p {
         margin-top: -10px;
         font-size: 20px;
+    }
+
+    .supported-classes {
+        background-color: #e6f7ff;
+        color: #0056b3;
+        border: 1px solid #b3e0ff;
+        padding: 12px;
+        border-radius: 6px;
+        margin: 0 auto 25px auto;
+        max-width: 800px;
+        font-size: 15px;
     }
 
     .hidden {

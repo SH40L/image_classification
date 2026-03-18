@@ -1,6 +1,10 @@
 Flask
 Flask-Login
-Flask-MySQLdb
 Werkzeug
 tensorflow
 Pillow
+python-dotenv
+psycopg2-binary
+cloudinary
+gunicorn
+requests

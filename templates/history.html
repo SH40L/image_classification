@@ -112,7 +112,7 @@
         </tr>
         {% for entry in history %}
         <tr>
-            <td><img src="{{ url_for('static', filename='images/' ~ entry[0]) }}" alt="History Image"></td>
+            <td><img src="{{ entry[0] }}" alt="History Image"></td>
             <td class="results">
                 {% set results = entry[1] %}
                 {% for i in range(1, 4) %}

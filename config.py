@@ -1,15 +1,20 @@
+import os
+from dotenv import load_dotenv
+
+# Load .env file
+load_dotenv(override=True)
+
 class Config:
-    SECRET_KEY = 'your_secret_key'
-    MYSQL_HOST = 'localhost'
-    MYSQL_USER = 'sh40l'
-    MYSQL_PASSWORD = 'ShaOl_10'
-    MYSQL_DB = 'image_classification_db'
-    
-    # Flask-Mail configuration
-    MAIL_SERVER = 'smtp.gmail.com'
-    MAIL_PORT = 587
-    MAIL_USE_TLS = True
-    MAIL_USE_SSL = False
-    MAIL_USERNAME = 'imgclassify.verify.your.email@gmail.com'
-    MAIL_PASSWORD = 'zivx zbqk sndz bpjc'
-    MAIL_DEFAULT_SENDER = 'imgclassify.verify.your.email@gmail.com'
+    SECRET_KEY = os.getenv("SECRET_KEY")
+
+    # Neon Database
+    DATABASE_URL = os.getenv("DATABASE_URL")
+
+    # Email (Google Apps Script Webhook)
+    MAIL_USERNAME = os.getenv("MAIL_USERNAME")
+    GOOGLE_SCRIPT_URL = os.getenv("GOOGLE_SCRIPT_URL")
+
+    # Cloudinary
+    CLOUDINARY_CLOUD_NAME = os.getenv("CLOUDINARY_CLOUD_NAME")
+    CLOUDINARY_API_KEY = os.getenv("CLOUDINARY_API_KEY")
+    CLOUDINARY_API_SECRET = os.getenv("CLOUDINARY_API_SECRET")
