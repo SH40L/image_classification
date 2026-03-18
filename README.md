@@ -35,5 +35,4 @@ For the best results, upload images containing one of the following:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/SH40L/image_classification](https://github.com/SH40L/image_classification)
-   cd your-repo-name
+   git clone https://github.com/SH40L/image_classification
