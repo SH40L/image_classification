@@ -1,0 +1,7 @@
+Frontend: HTML5, CSS3, JavaScript, Jinja2 Templates
+Backend: Python 3.10, Flask
+Machine Learning: TensorFlow, Keras, Pillow (PIL)
+Database: PostgreSQL (Neon Tech), psycopg2-binary
+Email API: Custom Google Apps Script Webhook (requests)
+Storage: Cloudinary API
+Deployment: Docker, Gunicorn, Hugging Face Spaces
